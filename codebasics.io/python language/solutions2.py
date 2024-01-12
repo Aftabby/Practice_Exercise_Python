@@ -45,6 +45,9 @@ with open("E:\\Programming\\Practice_Exercise_Python\\codebasics.io\\python lang
 
 
 
+
+#16
+#16.1
 class Employee:
      def __init__(self, id, name):
         self.id = id
@@ -53,8 +56,49 @@ class Employee:
 
 emp1 = Employee(1, "coder")
 
+#16.2
+
 print(emp1.name, emp1.id)
 del emp1.id
 #print(emp1.id) #Does not exist so it will show an error
 del emp1
 #print(emp1.name)    #does not exist, so it will show an error
+
+
+
+
+
+
+
+#17
+
+#17.1  &17.2
+class Animal:
+    def __init__(self, name, habitat):
+        self.name = name
+        self.habitat = habitat
+    
+    def sound(self):
+        print("Some animal sound")
+    
+    def print_name(self):
+        print(self.name)
+
+    
+class Dog(Animal):
+    def __init__(self, name, habitat, breed):
+        super().__init__(name, habitat)
+        self.breed = breed
+
+    def sound(self):
+        print("Woof Woof")
+
+michael = Dog("Michael", "Asian", "Pitbull")
+print(michael.name, michael.breed, michael.habitat)         #All instance variable of parent class is inherited to child class
+
+michael.sound()                                 # When both parent and child class has method with same name, the child class (i.e. with the class, the object is made with ) is prioritized
+
+michael.print_name()                        #Even the method is also inherited
+
+
+
